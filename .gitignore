@@ -1,37 +1,42 @@
 # Ignore configuration files that may contain sensitive information.
-sites/*/*settings*.php
+drupal/sites/*/settings*.php
 
-# Ignore paths that contain generated content.
-cache/
-files/
-sites/*/files
-sites/*/private
+# Ignore everything in sites/ except default/ and all/ folders For Aegir
+drupal/sites/*
+!drupal/sites/all
+!drupal/sites/default
+!drupal/sites/libraries
+drupal/*drushrc.php
+drupal/*sites.php
 
-# Ignore default text files
-.htaccess
-robots.txt
-/CHANGELOG.txt
-/COPYRIGHT.txt
-/INSTALL*.txt
-/LICENSE.txt
-/MAINTAINERS.txt
-/UPGRADE.txt
-/README.txt
-sites/all/README.txt
-sites/all/modules/README.txt
-sites/all/themes/README.txt
+# Ignore examples module.
+drupal/sites/all/modules/contrib/examples
 
-# Ignore everything but the "sites" folder ( for non core developer )
-web.config
-authorize.php
-cron.php
-index.php
-install.php
-update.php
-xmlrpc.php
-/includes
-/misc
-/modules
-/profiles
-/scripts
-/themes
+# Ignore configuration css files.
+drupal/sites/all/themes/politicamp*/css/*
+
+# Ignore generated sprite files.
+drupal/sites/all/themes/politicamp*/img/sprites/*
+
+# Ignore paths that contain user-generated content.
+drupal/sites/*/files
+drupal/sites/*/private
+
+databases/local
+.buildpath
+.Drupal.sublime-projectcomplections
+.sass-cache
+.project
+.settings
+*~
+*.orig
+.svn
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+*.sublime-projectcompletions
+nbproject
+*.swo
+*.Trash*
+*cwatch.pid
+
